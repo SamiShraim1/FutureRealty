@@ -1,6 +1,8 @@
-using FutureRealty.PL.Data;
+using FutureRealty.DAL.Data;
+using FutureRealty.PL.Core.Mapping;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using System.Reflection;
 
 namespace FutureRealty.PL
 {
@@ -19,6 +21,8 @@ namespace FutureRealty.PL
             builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             builder.Services.AddControllersWithViews();
+            builder.Services.AddAutoMapper(Assembly.GetAssembly(typeof(MappingProfile)));
+
 
             var app = builder.Build();
 

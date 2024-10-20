@@ -1,0 +1,23 @@
+﻿@model ServicesVM
+
+@section Header {
+    Delete Service
+}
+
+<div class="col-md-12">
+    <div class="card card-danger">
+        <div class="card-header">
+            <h3 class="card-title">Delete Confirmation</h3>
+        </div>
+        <div class="card-body">
+            <p>Are you sure you want to delete @Model.Name Service?</p>
+        </div>
+        <div class="card-footer">
+            <form asp-controller="Services" asp-action="Delete">
+                <input type="hidden" asp-for="Id" />
+                <button type="submit" class="btn btn-danger">Delete</button>
+                <a asp-controller="Services" asp-action="Index" class="btn btn-secondary">Cancel</a>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,8 +1,9 @@
-﻿using Microsoft.EntityFrameworkCore.Metadata;
+﻿using FutureRealty.DAL.Data;
+using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using System;
 
-namespace FutureRealty.PL.Data.Migrations
+namespace FutureRealty.DAL.Data.Migrations
 {
     public partial class CreateIdentitySchema : Migration
     {

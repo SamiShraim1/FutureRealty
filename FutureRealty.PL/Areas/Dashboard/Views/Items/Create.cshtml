@@ -1,0 +1,45 @@
+﻿@model ItemformVM
+
+@section Header {
+     Items
+}
+
+<div class="col-md-12">
+
+
+    <div class="card card-primary">
+        <div class="card-header">
+            <h3 class="card-title">Create</h3>
+        </div>
+
+
+        <form asp-controller="Items" asp-action="Create">
+            <div class="card-body">
+                <div class="form-group">
+                    <label asp-for="Name">Portfolio name</label>
+                    <input asp-for="Name" class="form-control" placeholder="Enter the neme">
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="PortfolioId">Select Portfolio</label>
+                    <select asp-for="PortfolioId" class="form-control" asp-items="@Model.Portfolios">
+                    </select>
+                </div>
+
+
+                <div class="form-group">
+                    <label asp-for="Description">Service Description</label>
+                    <input asp-for="Description" class="form-control" placeholder="Enter the Description">
+                </div>
+
+
+
+
+            </div>
+
+            <div class="card-footer">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </form>
+    </div>
+</div>
